@@ -1,0 +1,22 @@
+Line:
+
+1. How does your data structure allow developers to access and manipulate the data?
+  Developers can manipulate the data in the data structure via the join and leave methods, and they can also access the data via the search, front, middle, and back methods.
+
+2. If a developer wanted to find a specific element in your data structure, how would you search for it?
+  A developer is able to find a particular element in the data structure using the "search" method.
+
+3. What other real-world data can each structure represent?
+  This data structure is representative of a queue, a time sorted waiting list.
+
+
+Screen:
+
+1. How does your data structure allow developers to access and manipulate the data?
+  Developers can manipulate the data in the data structure via the insert method and can access the data via the at method.
+
+2. If a developer wanted to find a specific element in your data structure, how would you search for it?
+  A developer is able to find a particular element in the data structure by finding the coordinates of the pixel, and using the at method of the screen to see if the corresponding pixel is present.
+
+3. What other real-world data can each structure represent?
+  This data structure is representative of a 2 dimensional array or grid.
