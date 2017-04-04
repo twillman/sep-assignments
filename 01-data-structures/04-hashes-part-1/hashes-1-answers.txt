@@ -1,0 +1,3 @@
+Explain why doubling the size of the underlying array of your HashClass may be a poor idea.
+
+Arrays take up large consecutive blocks of memory.  As the arrays grow in size, doubling their size could be expensive in terms of both time and unnecessary reserved memory, just due to one collision.  
