@@ -26,12 +26,8 @@ class SeparateChaining
       current = current.next
     end
 
-    if (length < size)
-      @items[index(key, @items.length)].add_to_tail(Node.new(key,value))
-      if (load_factor>max_load_factor)
-        resize
-      end
-    else
+    i@items[index(key, @items.length)].add_to_tail(Node.new(key,value))
+    if (load_factor>max_load_factor || length > size)
       resize
     end
   end
@@ -97,5 +93,21 @@ class SeparateChaining
        end
      end
      }
+  end
+
+  def print
+    puts "Load Factor: #{load_factor}\n\n"
+    @items.each { |x|
+      if (x)
+        current =x.head
+        while (current)
+          puts "Key: #{current.key} ... Value: #{current.value}"
+          current = current.next
+        end
+      else
+        puts "Box Empty"
+      end
+      puts "____________"
+    }
   end
 end

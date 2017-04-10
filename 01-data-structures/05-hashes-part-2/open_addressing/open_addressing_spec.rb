@@ -42,7 +42,7 @@ RSpec.describe OpenAddressing, type: Class do
       hash = OpenAddressing.new(1)
       hash["key"] = "value"
       expect(hash.size).to eq 1
-      hash["key"] = "second value"
+      hash["key"] = "second value" #Based on my algorithm, it should actually resize twice with this key, though theoretically since keys are meant to be unique in a hash, they should simply update the value. I've opted to build the separate chaining lass with the unique key feature of hashes in mind.
       expect(hash.size).to eq 2
     end
 
