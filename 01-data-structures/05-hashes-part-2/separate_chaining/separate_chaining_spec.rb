@@ -66,7 +66,11 @@ RSpec.describe SeparateChaining, type: Class do
       # Load factor should be .5 when two items are added
       expect(h.load_factor).to eq 0.5
       h["keytwo"] = "value"
+      # As a comment for this portion, I had built mine such that keys are unique and using []= on an existing key would not let you add
+      # a duplicate key, but instead would update the value of that key. So in this case, a third item would not be added, but had it been
+      # a new key that was added, the resize would have successfully been triggered.
 
+      
       # Load factor goes down to .375 (3/8) since when third item is added, load factor goes to .75
       # then the resize is triggered and load factor is recalculated
       expect(h.load_factor).to eq 0.375
