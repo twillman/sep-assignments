@@ -9,7 +9,22 @@ class Node
     self.film_actor_hash = hash
   end
 
-  def find_kevin_bacon(node)
+
+  def in_a_movie_with_bacon(node) #was node in a movie w KB? returns movie or false
+    movie_array = []
+    for movies in node.film_actor_hash
+      for actors in node.film_actor_hash[movie]
+        if (actor.name == "Kevin Bacon")
+          return movie
+        end
+      end
+    end
+    return false
+  end
+
+
+
+  def find_kevin_bacon(node) #returns movie array (if exisits) connecting to KB or false
     y = in_a_movie_with_bacon(node)
     if (y)
       return @movie_array.push(y)
@@ -32,15 +47,4 @@ class Node
     return false
   end
 
-  def in_a_movie_with_bacon(node) #was node in a movie w KB? returns movie or false
-    movie_array = []
-    for movies in node.film_actor_hash
-      for actors in node.film_actor_hash[movie]
-        if (actor.name == "Kevin Bacon")
-          return movie
-        end
-      end
-    end
-    return false
-  end
 end
