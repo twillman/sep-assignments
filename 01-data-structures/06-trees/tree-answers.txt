@@ -1,0 +1,15 @@
+1. The difference in adding the same items to both the binary search tree and
+the min heap is that the binary search tree is sorted such that any item to the
+left of another item, regardless of height in the tree, is guaranteed to be less
+than everything to the right of it; whereas, in a min heap, everything on one
+level is guaranteed to be lower rated than everything in the levels below it,
+regardless of the left to right positions.
+
+2.  Insertions of an ordered range should be faster in the min heap, but search
+should on average be faster in the binary search tree, apart from small numbers.
+A deletion will depend on the size of the data structure, as to which is faster,
+but both involve the steps of finding, replacing and multiple comparisons, but
+after potential replacement, a heap will max out at 2 comparisons and potential
+movements.  The prime benefit of a heap is in the case of quick max/min retrieval
+as well as faster insertion , and the prime benefit of a binary search tree is
+overall optimized search.
