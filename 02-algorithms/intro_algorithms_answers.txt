@@ -1,0 +1,80 @@
+Calculating a Tip
+
+GET total
+CASE service OF
+  poor          : percentage = 0.10
+  below average : percentage = 0.15
+  average       : percentage = 0.18
+  good          : percentage = 0.2
+  exceptional   : percentage = 0.25
+ENDCASE
+CALCULATE tip = total * percentage
+RETURN tip
+
+
+Determining what to Wear
+GET occasion
+GET weather
+CASE occasion OF
+  gym           : IF weather is hot  THEN
+                    SET outfit to shorts and tank with running shoes
+                  ELSE
+                    SET outfit to yoga pants and sweatshirt with running shoes
+  date          : IF weather is hot  THEN
+                    SET outfit to skinny jeans and crop top with wedges
+                  ELSE
+                    SET outfit to jeans and sweater with boots
+  work          : IF weather is hot  THEN
+                    SET outfit to sheath dress and light sweater with sandals
+                  ELSE
+                    SET outfit dress pants and sweater with booties
+  shopping      : IF weather is hot  THEN
+                    SET outfit to jeans and tank with flats
+                  ELSE
+                    SET outfit to jeans and longsleeve with scarf and flat  boots
+ENDCASE
+RETURN outfit
+
+Getting to work
+Drive from parking space to apartment complex exit
+Pause and GET traffic
+IF there is cross traffic THEN
+  REPEAT
+    pause
+  UNTIL there is no cross traffic
+ENDIF
+Turn right onto Homestead Rd
+GET franklinlight
+CASE franklinlight OF
+  red   : REPEAT
+            pause
+          UNTIL franklinlight is green
+  yellow: slow down
+          REPEAT
+            pause
+          UNTIL franklinlight is green
+  green : continue driving
+ENDCASE
+Drive until DeAnza Blvd and GET deanzaLight
+CASE deanzaLight OF
+  red   : REPEAT
+            pause
+          UNTIL deanzaLight is green
+  yellow: slow down
+          REPEAT
+            pause
+          UNTIL deanzaLight is green
+  green : pause
+ENDCASE
+GET deanzaTraffic
+IF deanzaTraffic exists THEN
+  pause until there is no more deanzaTraffic
+ENDIF
+Turn right
+Continue driving until DeAnza 7 Sign
+Turn right into driveway
+FOR each parking space
+  IF the space is empty THEN
+    park in it
+  ENDIF
+ENDFOR
